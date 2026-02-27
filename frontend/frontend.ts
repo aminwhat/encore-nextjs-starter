@@ -1,8 +1,10 @@
 import { api } from "encore.dev/api";
 import next from "next";
 
+const isDev = process.env.NODE_ENV !== "production";
+
 const app = next({
-  dev: true,
+  dev: isDev,
   dir: "./frontend",
 });
 const handle = app.getRequestHandler();
